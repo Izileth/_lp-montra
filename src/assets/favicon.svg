@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Montra — favicon</title>
+  <desc id="desc">A minimal ivory M monogram on a deep vermilion field, inspired by the project's editorial red-and-black art direction.</desc>
+
+  <defs>
+    <linearGradient id="field" x1="8" y1="4" x2="58" y2="62" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7F2028"/>
+      <stop offset="1" stop-color="#B52E25"/>
+    </linearGradient>
+    <linearGradient id="monogram" x1="14" y1="12" x2="49" y2="53" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF8F0"/>
+      <stop offset="1" stop-color="#E9DCD1"/>
+    </linearGradient>
+    <clipPath id="tile">
+      <rect x="2" y="2" width="60" height="60" rx="13"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#tile)">
+    <rect width="64" height="64" fill="url(#field)"/>
+    <circle cx="47" cy="13" r="19" fill="#D34530" opacity=".24"/>
+    <path d="M-5 57 20 32 31 43 48 26 70 48" fill="none" stroke="#5C171D" stroke-width="8" opacity=".34"/>
+
+    <!-- Compact editorial M, with a sharp central valley for legibility at small sizes. -->
+    <path d="M12 48V16h8.1l11.9 17.1L43.9 16H52v32h-8.2V29.2L32 45.1 20.2 29.2V48Z"
+          fill="url(#monogram)"/>
+
+    <!-- Small dark cut gives the mark a distinctive, less generic silhouette. -->
+    <path d="M28.7 37.8 32 33.1l3.3 4.7-3.3 4.5Z" fill="#701D23" opacity=".92"/>
+  </g>
+</svg>
