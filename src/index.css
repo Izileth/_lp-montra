@@ -14,43 +14,6 @@
 }
 
 /* 4. Base */
-@layer base {
-  html,
-  body,
-  #root {
-    height: 100%;
-  }
-
-  body {
-    margin: 0;
-    background-color: var(--color-brand);
-    color: #fff;
-    font-family: var(--font-display);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    overflow: hidden;
-    overscroll-behavior: none;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  img {
-    -webkit-user-drag: none;
-    user-select: none;
-  }
-
-  button {
-    cursor: pointer;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      animation-duration: 0.01ms !important;
-      transition-duration: 0.01ms !important;
-    }
-  }
-}
-
 
 @layer base {
   html {

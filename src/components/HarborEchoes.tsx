@@ -1,7 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
 import Progress from "./Progress";
 // (remova: import Footer from "./Footer";)
 type Item = {
@@ -172,8 +170,6 @@ export default function HarborEchoes() {
             ))}
             <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-br from-black/15 via-transparent to-black/10" />
 
-            {/* Header */}
-            <Navbar />
 
             {/* Título + meta */}
             <section className="absolute inset-x-0 bottom-[calc(50%+20px)] z-10 px-4 md:px-[18px]">
@@ -228,7 +224,6 @@ export default function HarborEchoes() {
                 </div>
             </div>
 
-            <Footer />
             <Progress active={active} total={total} onPrev={() => go(-1)} onNext={() => go(1)} />
         </main>
     );
