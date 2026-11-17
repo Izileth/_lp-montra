@@ -1,11 +1,52 @@
+/* 1. Fontes: o @import do Google Fonts precisa vir ANTES do @import do Tailwind */
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+
+/* 2. Tailwind v4 */
 @import "tailwindcss";
 
-@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600&family=JetBrains+Mono:wght@400;500&family=Anton&display=swap");
+/* 3. Tokens do tema (gera as classes font-display, font-mono e font-logo) */
+@theme {
+  --font-display: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-logo: "Anton", Impact, sans-serif;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  --color-brand: #9a2220;
 }
 
+/* 4. Base */
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
 
+  body {
+    margin: 0;
+    background-color: var(--color-brand);
+    color: #fff;
+    font-family: var(--font-display);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow: hidden;
+    overscroll-behavior: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  img {
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
