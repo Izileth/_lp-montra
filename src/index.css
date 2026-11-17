@@ -1,1 +1,11 @@
+@import "tailwindcss";
+
 @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600&family=JetBrains+Mono:wght@400;500&family=Anton&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
