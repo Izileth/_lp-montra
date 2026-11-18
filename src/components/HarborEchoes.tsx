@@ -3,7 +3,7 @@ import { useGSAP } from "@gsap/react";
 import Navbar from "./Navbar";
 import { SLIDES } from "../data/slides";
 import { createCarouselMotion, type CarouselMotion } from "../motion/carousel";
-
+import ProgressiveBlur from "./ProgressiveBlur";
 const START = 0; // Começa no primeiro espécime (Sequóia-Gigante)
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -65,6 +65,9 @@ export default function HarborEchoes() {
 
       {/* Título + metadados (um par por slide, empilhados na mesma célula) */}
       <section className="absolute inset-x-0 bottom-[calc(50%+20px)] z-10 px-4 md:px-[18px]">
+
+        <ProgressiveBlur className="inset-x-0 -top-24 bottom-[-20px] md:-top-32" />
+
         <div className="flex flex-col gap-4 md:flex-row md:items-end">
           <div className="grid">
             {SLIDES.map((s) => (
