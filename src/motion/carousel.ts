@@ -439,7 +439,7 @@ export function createCarouselMotion({ root, slides, start }: Options): Carousel
 
       intro
         // 1. o fundo emerge
-        .fromTo(root, { backgroundColor: "#2b0909" }, { backgroundColor: slides[start].tone, duration: 1.6, ease: "sine.inOut" }, 0)
+        .fromTo(root, { backgroundColor: "#051F20" }, { backgroundColor: slides[start].tone, duration: 1.6, ease: "sine.inOut" }, 0)
         .to(bgStack, { autoAlpha: 1, scale: BASE_SCALE, duration: 1.8, ease: EASE.settle }, 0)
         // 2. a foto principal se revela por máscara
         .to(bgs[start], { clipPath: "inset(0% 0% 0% 0%)", duration: 1.5, ease: EASE.reveal }, 0.25)

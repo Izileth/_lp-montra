@@ -2,63 +2,63 @@ export type LinkItem = { label: string; href: string };
 
 export const BRAND = {
     name: "Montra",
-    tagline: "Sound, light and silhouettes after dark.",
+    tagline: "O esplendor milenar das grandes árvores do mundo.",
     description:
-        "Montra is a Berlin-based night platform curating showcases, listening sessions and live visuals with independent collectives.",
-    email: "hello@montra.example",
-    phone: "+49 30 0000 0000",
-    address: ["Hafenstraße 12", "10243 Berlin, DE"],
+        "Montra é um catálogo vivo e observatório botânico dedicado à catalogação, preservação e celebração das mais nobres espécies de árvores do planeta.",
+    email: "contato@montra-arvores.org",
+    phone: "+55 11 3200 4800",
+    address: ["Reserva Florestal Mantiqueira", "São Paulo, SP · Brasil"],
     hours: [
-        { day: "Thu – Sat", time: "10 PM – 6 AM" },
-        { day: "Sun", time: "6 PM – 12 AM" },
+        { day: "Ter – Sex", time: "09:00 – 18:00" },
+        { day: "Sáb – Dom", time: "08:00 – 17:00" },
     ],
-    timeZone: "Europe/Berlin",
-    city: "Berlin",
+    timeZone: "America/Sao_Paulo",
+    city: "São Paulo",
     year: new Date().getFullYear(),
 };
 
 export const NAV_LINKS: LinkItem[] = [
-    { label: "Events", href: "#events" },
-    { label: "Artists", href: "#artists" },
-    { label: "Venues", href: "#venues" },
-    { label: "Journal", href: "#journal" },
-    { label: "Tickets", href: "#tickets" },
-    { label: "About", href: "#about" },
+    { label: "Espécies", href: "#especies" },
+    { label: "Herbário", href: "#herbario" },
+    { label: "Biomas", href: "#biomas" },
+    { label: "Conservação", href: "#conservacao" },
+    { label: "Expedições", href: "#expedicoes" },
+    { label: "Sobre", href: "#sobre" },
 ];
 
 export const SOCIALS: LinkItem[] = [
     { label: "Instagram", href: "https://instagram.com/" },
-    { label: "SoundCloud", href: "https://soundcloud.com/" },
-    { label: "YouTube", href: "https://youtube.com/" },
-    { label: "Resident Advisor", href: "https://ra.co/" },
+    { label: "Herbarium Digital", href: "https://gbif.org/" },
+    { label: "Arquivo Científico", href: "https://jstor.org/" },
+    { label: "Botanic Gardens", href: "https://bgci.org/" },
 ];
 
 export const FOOTER_COLUMNS: { title: string; links: LinkItem[] }[] = [
     {
-        title: "Explore",
+        title: "Espécies",
         links: [
-        { label: "Events", href: "#events" },
-        { label: "Artists", href: "#artists" },
-        { label: "Venues", href: "#venues" },
-        { label: "Journal", href: "#journal" },
+            { label: "Grandes Coníferas", href: "#coniferas" },
+            { label: "Folhosas Tropicais", href: "#tropicais" },
+            { label: "Fósseis Vivos", href: "#fosseis" },
+            { label: "Matas Nativas", href: "#nativas" },
         ],
     },
     {
-        title: "Company",
+        title: "Iniciativa",
         links: [
-        { label: "About", href: "#about" },
-        { label: "Press kit", href: "#press" },
-        { label: "Careers", href: "#careers" },
-        { label: "Contact", href: "#contact" },
+            { label: "Sobre a Montra", href: "#sobre" },
+            { label: "Herbário Vivo", href: "#herbario" },
+            { label: "Expedições", href: "#expedicoes" },
+            { label: "Contato Científico", href: "#contact" },
         ],
     },
     {
-        title: "Legal",
+        title: "Preservação",
         links: [
-        { label: "Terms", href: "#terms" },
-        { label: "Privacy", href: "#privacy" },
-        { label: "Cookies", href: "#cookies" },
-        { label: "Imprint", href: "#imprint" },
+            { label: "Guia Dendrológico", href: "#guia" },
+            { label: "Políticas de Manejo", href: "#manejo" },
+            { label: "Créditos Botânicos", href: "#creditos" },
+            { label: "Acesso Aberto", href: "#acesso" },
         ],
     },
 ];

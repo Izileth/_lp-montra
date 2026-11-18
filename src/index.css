@@ -4,13 +4,27 @@
 /* 2. Tailwind v4 */
 @import "tailwindcss";
 
-/* 3. Tokens do tema (gera as classes font-display, font-mono e font-logo) */
+/* 3. Tokens do tema - Paleta Botânica Arbórea */
 @theme {
   --font-display: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-logo: "Anton", Impact, sans-serif;
 
-  --color-brand: #9a2220;
+  /* Paleta oficial (README.md):
+     1. #051F20 – Verde-escuro muito profundo (quase preto)
+     2. #0B2B26 – Verde-escuro profundo / Verde-floresta escuro
+     3. #163832 – Verde-escuro fechado
+     4. #235347 – Verde-esmeralda escuro / Verde-militar fechado
+     5. #8EB69B – Verde-sálvia claro / Verde-suave
+     6. #DAF1DE – Verde-pálido / Menta muito claro
+  */
+  --color-brand: #0B2B26;
+  --color-tree-950: #051F20;
+  --color-tree-900: #0B2B26;
+  --color-tree-800: #163832;
+  --color-tree-700: #235347;
+  --color-tree-300: #8EB69B;
+  --color-tree-100: #DAF1DE;
 }
 
 /* 4. Base */
@@ -18,18 +32,24 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: #051F20;
   }
 
   body {
     margin: 0;
     min-height: 100%;
-    background-color: var(--color-brand);
-    color: #fff;
+    background-color: #051F20;
+    color: #DAF1DE;
     font-family: var(--font-display);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     -webkit-tap-highlight-color: transparent;
+  }
+
+  ::selection {
+    background-color: #235347;
+    color: #DAF1DE;
   }
 
   img {

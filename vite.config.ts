@@ -9,5 +9,7 @@ export default defineConfig({
     babel({ presets: [reactCompilerPreset()] }),
     tailwindcss(),
   ],
-  
+  server: {
+    port: 5990,
+  }
 })

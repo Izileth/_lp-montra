@@ -6,24 +6,33 @@ import { BRAND, FOOTER_COLUMNS, SOCIALS } from "../data/site";
 gsap.registerPlugin(ScrollTrigger);
 
 function useLocalTime(timeZone: string) {
-  const fmt = () =>
-    new Intl.DateTimeFormat("en-GB", {
+  const [time, setTime] = useState(() =>
+    new Intl.DateTimeFormat("pt-BR", {
       timeZone,
       hour: "2-digit",
       minute: "2-digit",
       hour12: false,
-    }).format(new Date());
+    }).format(new Date())
+  );
 
-  const [time, setTime] = useState(fmt);
   useEffect(() => {
+    const fmt = () =>
+      new Intl.DateTimeFormat("pt-BR", {
+        timeZone,
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      }).format(new Date());
+
     const id = window.setInterval(() => setTime(fmt()), 15_000);
     return () => window.clearInterval(id);
   }, [timeZone]);
+
   return time;
 }
 
-const label = "mb-4 font-mono text-[11px] uppercase leading-none tracking-wide opacity-60";
-const item = "font-mono text-[12px] uppercase leading-[1.7] tracking-wide";
+const label = "mb-4 font-mono text-[11px] uppercase leading-none tracking-wide text-[#8EB69B]";
+const item = "font-mono text-[12px] uppercase leading-[1.7] tracking-wide text-[#DAF1DE]/90";
 
 export default function Footer() {
   const root = useRef<HTMLElement>(null);
@@ -58,53 +67,52 @@ export default function Footer() {
     const valid = /^\S+@\S+\.\S+$/.test(email);
     setStatus(valid ? "ok" : "error");
     if (valid) e.currentTarget.reset();
-    // 👉 envie `email` para sua API / serviço de newsletter aqui
   };
 
   return (
-    <footer ref={root} id="contact" className="relative overflow-hidden bg-[#9a2220] text-white">
+    <footer ref={root} id="contact" className="relative overflow-hidden border-t border-[#163832] bg-[#051F20] text-[#DAF1DE]">
       <div className="mx-auto max-w-[1400px] px-4 pt-16 md:px-[18px] md:pt-24">
         {/* topo: tagline + newsletter */}
         <div className="grid gap-12 md:grid-cols-12 md:gap-6">
           <div className="js-foot md:col-span-7">
-            <h2 className="font-display text-[40px] font-medium leading-[0.92] tracking-[-0.045em] sm:text-[56px] lg:text-[72px]">
+            <h2 className="font-display text-[40px] font-medium leading-[0.92] tracking-[-0.045em] text-[#DAF1DE] sm:text-[56px] lg:text-[72px]">
               {BRAND.tagline}
             </h2>
-            <p className="mt-6 max-w-[46ch] font-mono text-[12px] leading-[1.7] tracking-wide opacity-80">
+            <p className="mt-6 max-w-[46ch] font-mono text-[12px] leading-[1.7] tracking-wide text-[#8EB69B]">
               {BRAND.description}
             </p>
           </div>
 
           <form onSubmit={onSubmit} className="js-foot md:col-span-4 md:col-start-9" noValidate>
-            <p className={label}>Newsletter</p>
-            <div className="flex items-center gap-1.5 rounded-full bg-black/15 p-1 backdrop-blur-sm">
+            <p className={label}>Boletim Botânico</p>
+            <div className="flex items-center gap-1.5 rounded-full border border-[#235347] bg-[#0B2B26]/80 p-1 backdrop-blur-sm transition-colors focus-within:border-[#8EB69B]">
               <input
                 name="email"
                 type="email"
                 required
                 autoComplete="email"
-                placeholder="YOUR EMAIL"
+                placeholder="SEU EMAIL BOTÂNICO"
                 aria-label="Email"
-                className="min-w-0 flex-1 bg-transparent px-4 font-mono text-[11px] uppercase tracking-wide placeholder:text-white/50 focus:outline-none"
+                className="min-w-0 flex-1 bg-transparent px-4 font-mono text-[11px] uppercase tracking-wide text-[#DAF1DE] placeholder:text-[#8EB69B]/50 focus:outline-none"
               />
               <button
                 type="submit"
-                className="rounded-full bg-white px-4 py-2.5 font-mono text-[11px] uppercase leading-none tracking-wide text-black transition hover:bg-white/80"
+                className="rounded-full bg-[#8EB69B] px-4 py-2.5 font-mono text-[11px] font-semibold uppercase leading-none tracking-wide text-[#051F20] transition hover:bg-[#DAF1DE]"
               >
-                Subscribe →
+                Assinar →
               </button>
             </div>
-            <p role="status" className="mt-3 h-4 font-mono text-[10px] uppercase tracking-wide opacity-80">
-              {status === "ok" && "Thanks — you're on the list."}
-              {status === "error" && "Please enter a valid email."}
+            <p role="status" className="mt-3 h-4 font-mono text-[10px] uppercase tracking-wide text-[#8EB69B]">
+              {status === "ok" && "Obrigado — você receberá nossas publicações florestais."}
+              {status === "error" && "Por favor, insira um e-mail válido."}
             </p>
           </form>
         </div>
 
         {/* colunas */}
-        <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-12 border-t border-white/20 pt-10 md:grid-cols-12 md:gap-y-0">
+        <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-12 border-t border-[#163832] pt-10 md:grid-cols-12 md:gap-y-0">
           <div className="js-foot md:col-span-3">
-            <p className={label}>Visit</p>
+            <p className={label}>Visitação & Herbário</p>
             <address className={`${item} not-italic`}>
               {BRAND.address.map((l) => (
                 <span key={l} className="block">{l}</span>
@@ -113,7 +121,7 @@ export default function Footer() {
             <ul className={`${item} mt-4`}>
               {BRAND.hours.map((h) => (
                 <li key={h.day} className="flex gap-3">
-                  <span className="opacity-60">{h.day}</span>
+                  <span className="text-[#8EB69B]">{h.day}</span>
                   <span>{h.time}</span>
                 </li>
               ))}
@@ -126,7 +134,7 @@ export default function Footer() {
               <ul>
                 {col.links.map((l) => (
                   <li key={l.label}>
-                    <a href={l.href} className={`${item} underline-offset-4 transition hover:underline`}>
+                    <a href={l.href} className={`${item} underline-offset-4 transition hover:text-[#8EB69B] hover:underline`}>
                       {l.label}
                     </a>
                   </li>
@@ -136,7 +144,7 @@ export default function Footer() {
           ))}
 
           <div className="js-foot col-span-2 md:col-span-1">
-            <p className={label}>Follow</p>
+            <p className={label}>Acervos</p>
             <ul>
               {SOCIALS.map((s) => (
                 <li key={s.label}>
@@ -144,7 +152,7 @@ export default function Footer() {
                     href={s.href}
                     target="_blank"
                     rel="noreferrer"
-                    className={`${item} underline-offset-4 transition hover:underline`}
+                    className={`${item} underline-offset-4 transition hover:text-[#8EB69B] hover:underline`}
                   >
                     {s.label} ↗
                   </a>
@@ -155,11 +163,11 @@ export default function Footer() {
         </div>
 
         {/* contato rápido */}
-        <div className="js-foot mt-12 flex flex-col gap-1 border-t border-white/20 pt-6 font-mono text-[12px] uppercase tracking-wide sm:flex-row sm:justify-between">
-          <a href={`mailto:${BRAND.email}`} className="underline-offset-4 hover:underline">
+        <div className="js-foot mt-12 flex flex-col gap-1 border-t border-[#163832] pt-6 font-mono text-[12px] uppercase tracking-wide text-[#DAF1DE]/90 sm:flex-row sm:justify-between">
+          <a href={`mailto:${BRAND.email}`} className="underline-offset-4 hover:text-[#8EB69B] hover:underline">
             {BRAND.email}
           </a>
-          <a href={`tel:${BRAND.phone.replace(/\s/g, "")}`} className="underline-offset-4 hover:underline">
+          <a href={`tel:${BRAND.phone.replace(/\s/g, "")}`} className="underline-offset-4 hover:text-[#8EB69B] hover:underline">
             {BRAND.phone}
           </a>
         </div>
@@ -169,24 +177,24 @@ export default function Footer() {
       <div className="js-wordmark-wrap mt-10 overflow-hidden px-2 md:mt-14">
         <h2
           aria-hidden
-          className="js-wordmark select-none pt-[0.05em] text-center font-logo text-[30vw] uppercase leading-[0.82] tracking-[-0.02em] text-black/90"
+          className="js-wordmark select-none pt-[0.05em] text-center font-logo text-[30vw] uppercase leading-[0.82] tracking-[-0.02em] text-[#0B2B26] transition-colors duration-500 hover:text-[#163832]"
         >
           {BRAND.name}
         </h2>
       </div>
 
       {/* barra inferior */}
-      <div className="relative z-10 mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 pb-5 pt-4 font-mono text-[10px] uppercase leading-none tracking-wide md:px-[18px]">
-        <span>© {BRAND.year} {BRAND.name}</span>
+      <div className="relative z-10 mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-x-6 gap-y-2 border-t border-[#163832]/60 px-4 pb-5 pt-4 font-mono text-[10px] uppercase leading-none tracking-wide text-[#8EB69B] md:px-[18px]">
+        <span>© {BRAND.year} {BRAND.name} · Catálogo de Espécies Arbóreas</span>
         <span>
           {BRAND.city} · {time}
         </span>
         <button
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="rounded-full bg-black/15 px-3 py-[7px] backdrop-blur-sm transition hover:bg-black/30"
+          className="rounded-full border border-[#235347] bg-[#0B2B26] px-3 py-[7px] text-[#DAF1DE] backdrop-blur-sm transition hover:border-[#8EB69B] hover:bg-[#163832]"
         >
-          Back to top ↑
+          Voltar ao topo ↑
         </button>
       </div>
     </footer>
