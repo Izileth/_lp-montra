@@ -27,8 +27,8 @@ const DATA: Omit<Slide, "id" | "alt">[] = [
     time: "Porte · até 85m",
     city: "Sierra Nevada · EUA",
     tone: "#051F20",
-    bg: "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=2000&q=85",
-    thumb: "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=600&h=800&q=80",
+    bg: "https://images.unsplash.com/photo-1461397821064-32d6b3c91b9f?auto=format&fit=crop&w=2000&q=85",
+    thumb: "https://images.unsplash.com/photo-1461397821064-32d6b3c91b9f?auto=format&fit=crop&w=600&h=800&q=80",
   },
   {
     title: ["Carvalho", "Centenário"],
@@ -37,8 +37,8 @@ const DATA: Omit<Slide, "id" | "alt">[] = [
     time: "Copa Frondosa · 40m",
     city: "Florestas Temperadas",
     tone: "#0B2B26",
-    bg: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=2000&q=85",
-    thumb: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=600&h=800&q=80",
+    bg: "https://images.unsplash.com/photo-1773148374420-d40f365a9d88?auto=format&fit=crop&w=2000&q=85",
+    thumb: "https://images.unsplash.com/photo-1773148374420-d40f365a9d88?auto=format&fit=crop&w=600&h=800&q=80",
   },
   {
     title: ["Cedro do", "Líbano"],
@@ -47,8 +47,8 @@ const DATA: Omit<Slide, "id" | "alt">[] = [
     time: "Altitude · 1.800m",
     city: "Montanhas do Levante",
     tone: "#163832",
-    bg: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2000&q=85",
-    thumb: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&h=800&q=80",
+    bg: "https://images.unsplash.com/photo-1749766731360-48040f37427d?q=80&w=771&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+    thumb: "https://images.unsplash.com/photo-1749766731360-48040f37427d?q=80&w=771&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
   },
   {
     title: ["Araucária", "Pinheiro"],
@@ -57,8 +57,8 @@ const DATA: Omit<Slide, "id" | "alt">[] = [
     time: "Copa Candelabro · 50m",
     city: "Mata Atlântica · Brasil",
     tone: "#235347",
-    bg: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=2000&q=85",
-    thumb: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&h=800&q=80",
+    bg: "https://images.unsplash.com/photo-1565626571703-65f9128c1050?auto=format&fit=crop&w=2000&q=85",
+    thumb: "https://images.unsplash.com/photo-1565626571703-65f9128c1050?auto=format&fit=crop&w=600&h=800&q=80",
   },
   {
     title: ["Baobá", "Ancestral"],
@@ -67,8 +67,8 @@ const DATA: Omit<Slide, "id" | "alt">[] = [
     time: "Circunferência · 30m",
     city: "Madagáscar & África",
     tone: "#051F20",
-    bg: "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=2000&q=85",
-    thumb: "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=600&h=800&q=80",
+    bg: "https://images.unsplash.com/photo-1570742544137-3a469196c32b?auto=format&fit=crop&w=2000&q=85",
+    thumb: "https://images.unsplash.com/photo-1585335740623-f7a1f0c446eb?auto=format&fit=crop&w=600&h=800&q=80",
   },
   {
     title: ["Bétula", "Prateada"],
@@ -77,8 +77,8 @@ const DATA: Omit<Slide, "id" | "alt">[] = [
     time: "Resistência ao Gelo",
     city: "Taiga Boreal & Tundra",
     tone: "#0B2B26",
-    bg: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=2000&q=85",
-    thumb: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=600&h=800&q=80",
+    bg: "https://images.unsplash.com/photo-1758818248575-0ef54d6e2d62?auto=format&fit=crop&w=2000&q=85",
+    thumb: "https://images.unsplash.com/photo-1777297821410-fb6da7341de9?auto=format&fit=crop&w=600&h=800&q=80",
   },
   {
     title: ["Oliveira", "Milenar"],
@@ -87,8 +87,8 @@ const DATA: Omit<Slide, "id" | "alt">[] = [
     time: "Tronco Contorcido",
     city: "Bacia do Mediterrâneo",
     tone: "#163832",
-    bg: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=2000&q=85",
-    thumb: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&h=800&q=80",
+    bg: "https://images.unsplash.com/photo-1639220448675-8c01fdb446fb?auto=format&fit=crop&w=2000&q=85",
+    thumb: "https://images.unsplash.com/photo-1770337497084-c499feb9bc2b?auto=format&fit=crop&w=600&h=800&q=80",
   },
   {
     title: ["Pau", "Brasil"],
@@ -97,8 +97,8 @@ const DATA: Omit<Slide, "id" | "alt">[] = [
     time: "Patrimônio Botânico",
     city: "Costa Leste Brasileira",
     tone: "#235347",
-    bg: "https://images.unsplash.com/photo-1476231682828-37e571bc172f?auto=format&fit=crop&w=2000&q=85",
-    thumb: "https://images.unsplash.com/photo-1476231682828-37e571bc172f?auto=format&fit=crop&w=600&h=800&q=80",
+    bg: "https://images.unsplash.com/photo-1679310290857-d52802538880?auto=format&fit=crop&w=2000&q=85",
+    thumb: "https://commons.wikimedia.org/wiki/Special:FilePath/Caesalpinia_echinata_-_Paubrasil.jpg?width=800",
   },
   {
     title: ["Ginkgo", "Ancestral"],
@@ -107,8 +107,8 @@ const DATA: Omit<Slide, "id" | "alt">[] = [
     time: "Folhas Douradas em Leque",
     city: "Cordilheiras Orientais",
     tone: "#0B2B26",
-    bg: "https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=2000&q=85",
-    thumb: "https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=600&h=800&q=80",
+    bg: "https://images.unsplash.com/photo-1766643475835-2a28a1987eab?auto=format&fit=crop&w=2000&q=85",
+    thumb: "https://images.unsplash.com/photo-1636279129141-7dcc8861172d?auto=format&fit=crop&w=600&h=800&q=80",
   },
 ];
 

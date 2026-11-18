@@ -1,32 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
-  <title id="title">Montra — Espécies Arbóreas</title>
-  <desc id="desc">Monograma minimalista M em tons botânicos verdes com a paleta oficial da floresta.</desc>
 
-  <defs>
-    <linearGradient id="field" x1="8" y1="4" x2="58" y2="62" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#051F20"/>
-      <stop offset="1" stop-color="#0B2B26"/>
-    </linearGradient>
-    <linearGradient id="monogram" x1="14" y1="12" x2="49" y2="53" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#DAF1DE"/>
-      <stop offset="1" stop-color="#8EB69B"/>
-    </linearGradient>
-    <clipPath id="tile">
-      <rect x="2" y="2" width="60" height="60" rx="13"/>
-    </clipPath>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="13" fill="#051F20"/>
 
-  <g clip-path="url(#tile)">
-    <rect width="64" height="64" fill="url(#field)"/>
-    <circle cx="47" cy="13" r="19" fill="#235347" opacity=".35"/>
-    <path d="M-5 57 20 32 31 43 48 26 70 48" fill="none" stroke="#163832" stroke-width="8" opacity=".5"/>
+  <path d="M32 8 55 49H9Z" fill="#DAF1DE"/>
 
-    <!-- Compact editorial M with tree branch silhouette vibes -->
-    <path d="M12 48V16h8.1l11.9 17.1L43.9 16H52v32h-8.2V29.2L32 45.1 20.2 29.2V48Z"
-          fill="url(#monogram)"/>
+  <path d="M32 8 32 49H9Z" fill="#8EB69B"/>
 
-    <!-- Dark cut detail -->
-    <path d="M28.7 37.8 32 33.1l3.3 4.7-3.3 4.5Z" fill="#051F20" opacity=".95"/>
-  </g>
+  <path d="M25 36H39L32 48Z" fill="#051F20"/>
 </svg>
