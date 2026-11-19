@@ -62,17 +62,13 @@ export default function HarborEchoes() {
       <div className="pointer-events-none absolute inset-x-0 top-0 z-[3] h-36 bg-gradient-to-b from-[#051F20]/80 via-[#051F20]/30 to-transparent" />
       {/* Gradiente inferior e intermediário para contraste de títulos, metadados e carrossel */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[3] h-[65%] bg-gradient-to-t from-[#051F20]/95 via-[#051F20]/50 to-transparent" />
-
+      <ProgressiveBlur
+        className="inset-x-0 bottom-[calc(50%-40px)] top-[calc(50%-12rem)] z-[4] md:top-[calc(50%-15rem)] lg:top-[calc(50%-17rem)]"
+      />
 
       {/* Título + metadados (um par por slide, empilhados na mesma célula) */}
       <section className="absolute inset-x-0 bottom-[calc(50%+20px)] z-10 px-4 md:px-[18px]">
 
-        {/* ProgressiveBlur estendendo-se por debaixo dos cards do slide para eliminar qualquer fresta horizontal */}
-        <ProgressiveBlur className="inset-x-0 -top-28 bottom-[-450px] md:-top-36 md:bottom-[-520px]" />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-x-0 -top-28 bottom-[-450px] -z-10 bg-gradient-to-t from-[#051F20]/90 via-[#051F20]/40 to-transparent md:-top-36 md:bottom-[-520px]"
-        />
 
         <div className="flex flex-col gap-4 md:flex-row md:items-end">
           <div className="grid">
