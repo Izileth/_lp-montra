@@ -42,6 +42,7 @@ export function createCarouselMotion({ root, slides, start }: Options): Carousel
   const bgs = all("[data-bg]");
   const bgImgs = all<HTMLImageElement>("[data-bg-img]");
   const veil = one("[data-veil]");
+  const blurEl = one("[data-blur]");
   const titles = all("[data-title]");
   const metas = all("[data-meta]");
   const strip = one("[data-strip]");
@@ -163,6 +164,9 @@ export function createCarouselMotion({ root, slides, start }: Options): Carousel
         .to(inc, { clipPath: "inset(0% 0% 0% 0%)", duration: 1.15, ease: EASE.reveal }, 0)
         .to(incImg, { scale: 1, xPercent: 0, duration: 1.7, ease: EASE.settle }, 0)
         .to(outImg, { scale: 1.07, xPercent: -dir * 5, duration: 1.3, ease: EASE.settle }, 0)
+        // pulso da faixa: alivia quando a foto nova abre e volta a assentar
+        .to(blurEl, { "--k": lite ? 1 : 0.55, duration: 0.45, ease: "sine.out" } as gsap.TweenVars, 0)
+        .to(blurEl, { "--k": 1, duration: 0.95, ease: "sine.inOut" } as gsap.TweenVars, 0.45)
         .to(veil, { opacity: lite ? 0 : 0.26, duration: 0.45, ease: "sine.out" }, 0)
         .to(veil, { opacity: 0, duration: 0.9, ease: "sine.inOut" }, 0.45)
         .to(root, { backgroundColor: slides[next].tone, duration: 1.2, ease: "sine.inOut" }, 0)
@@ -446,8 +450,10 @@ export function createCarouselMotion({ root, slides, start }: Options): Carousel
         .to(bgImgs[start], { scale: 1, duration: 2.2, ease: EASE.settle }, 0.25)
         // 3. título (SplitText por linhas)
         .to(lines0, { yPercent: 0, duration: 1.15, stagger: 0.12 }, 0.85)
+        // 3b. a faixa de leitura "foca" enquanto o título entra
+        .to(blurEl, { "--k": 1, duration: 1.7, ease: EASE.settle } as gsap.TweenVars, 0.8)
         // 4. metadados
-        .to(items0, { y: 0, autoAlpha: 1, duration: 0.9, stagger: 0.07 }, 1.15);
+        .to(items0, { y: 0, autoAlpha: 1, duration: 0.9, stagger: 0.07 }, 1.15);  
 
       // 5. galeria: cards entram em sequência, do centro para as bordas
       enter.forEach((e, i) => intro.to(e, { v: 1, duration: 1.15 }, 0.95 + dist(i) * 0.1));
@@ -469,6 +475,7 @@ export function createCarouselMotion({ root, slides, start }: Options): Carousel
     gsap.set(metas, { autoAlpha: 0 });
     gsap.set(nav, { autoAlpha: 0 });
     gsap.set(pagination, { autoAlpha: 0 });
+        gsap.set(blurEl, { "--k": 0 } as gsap.TweenVars);
     gsap.set(veil, { opacity: 0 });
     cards[start].setAttribute("aria-current", "true");
     measure();
