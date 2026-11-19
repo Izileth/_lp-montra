@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import Navbar from "./Navbar";
 import { BRAND, ROUTE_METADATA } from "../data/site";
 import { navigate, useCurrentPath } from "../router";
 
@@ -56,8 +55,6 @@ export default function NotFound() {
       ref={root}
       className="relative min-h-screen w-full overflow-hidden bg-[#051F20] text-[#DAF1DE] selection:bg-[#235347] selection:text-[#DAF1DE]"
     >
-      {/* Navbar global */}
-      <Navbar />
 
       {/* Textura de grão analógico idêntica à da home */}
       <div

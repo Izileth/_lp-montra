@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import Navbar from "./Navbar";
 import { SLIDES } from "../data/slides";
 import { createCarouselMotion, type CarouselMotion } from "../motion/carousel";
 import ProgressiveBlur from "./ProgressiveBlur";
@@ -61,7 +60,6 @@ export default function HarborEchoes() {
       />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[3] h-1/3 bg-gradient-to-t from-[#051F20]/90 via-[#051F20]/30 to-transparent" />
 
-      <Navbar />
 
       {/* Título + metadados (um par por slide, empilhados na mesma célula) */}
       <section className="absolute inset-x-0 bottom-[calc(50%+20px)] z-10 px-4 md:px-[18px]">
