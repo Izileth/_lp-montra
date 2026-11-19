@@ -67,8 +67,14 @@ export default function HarborEchoes() {
       {/* Título + metadados (um par por slide, empilhados na mesma célula) */}
       <section className="absolute inset-x-0 bottom-[calc(50%+20px)] z-10 px-4 md:px-[18px]">
 
-        <ProgressiveBlur className="inset-x-0 -top-24 bottom-[-20px] md:-top-32" />
-              <div className="flex flex-col gap-4 md:flex-row md:items-end">
+        {/* ProgressiveBlur estendendo-se por debaixo dos cards do slide para eliminar qualquer fresta horizontal */}
+        <ProgressiveBlur className="inset-x-0 -top-28 bottom-[-450px] md:-top-36 md:bottom-[-520px]" />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 -top-28 bottom-[-450px] -z-10 bg-gradient-to-t from-[#051F20]/90 via-[#051F20]/40 to-transparent md:-top-36 md:bottom-[-520px]"
+        />
+
+        <div className="flex flex-col gap-4 md:flex-row md:items-end">
           <div className="grid">
             {SLIDES.map((s) => (
               <h2
@@ -90,7 +96,7 @@ export default function HarborEchoes() {
               <div
                 key={s.id}
                 data-meta
-                className="col-start-1 row-start-1 flex flex-wrap items-end justify-between gap-x-6 gap-y-1 text-[#8EB69B] md:flex-nowrap md:pl-[70px]"
+                className="col-start-1 row-start-1 flex flex-wrap items-end justify-between gap-x-6 gap-y-1 text-[#DAF1DE] md:flex-nowrap md:pl-[70px]"
               >
                 <span data-meta-item className="block font-medium text-[#DAF1DE]">{s.by}</span>
                 <div className="flex gap-6 md:gap-[90px]">
@@ -110,7 +116,7 @@ export default function HarborEchoes() {
         role="group"
         aria-roledescription="carousel"
         aria-label="Catálogo Botânico de Espécies Arbóreas"
-        className="absolute inset-x-0 top-1/2 z-10 h-[calc(var(--w)*1.35)] cursor-grab touch-pan-y active:cursor-grabbing [--w:40vw] sm:[--w:28vw] md:[--w:21vw] lg:[--w:15.2vw]"
+        className="absolute inset-x-0 top-1/2 z-20 h-[calc(var(--w)*1.35)] cursor-grab touch-pan-y active:cursor-grabbing [--w:40vw] sm:[--w:28vw] md:[--w:21vw] lg:[--w:15.2vw]"
       >
         {SLIDES.map((s) => (
           <button
@@ -137,7 +143,7 @@ export default function HarborEchoes() {
       {/* Paginação */}
       <div
         data-pagination
-        className="absolute inset-x-0 bottom-0 z-20 flex items-end justify-between px-[15px] pb-[15px] text-[#DAF1DE]"
+        className="absolute inset-x-0 bottom-0 z-30 flex items-end justify-between px-[15px] pb-[15px] text-[#DAF1DE]"
       >
         <div className="w-[min(254px,calc(100%-110px))] font-mono text-[10px] leading-none tracking-wide">
           <div className="mb-2 flex justify-between">
