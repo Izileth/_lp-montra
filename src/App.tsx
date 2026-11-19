@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 export default function App() {
   const path = useCurrentPath();
   const isHome = path === "/" || path === "";
-
+  
   return (
     <>
       <Navbar />

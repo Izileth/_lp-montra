@@ -58,13 +58,20 @@ export default function HarborEchoes() {
         className="pointer-events-none absolute inset-0 z-[3] opacity-[0.06] mix-blend-overlay"
         style={{ backgroundImage: GRAIN }}
       />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[3] h-1/3 bg-gradient-to-t from-[#051F20]/90 via-[#051F20]/30 to-transparent" />
+      {/* Gradiente superior sutil para proteger a navegação */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-[3] h-36 bg-gradient-to-b from-[#051F20]/80 via-[#051F20]/30 to-transparent" />
+      {/* Gradiente inferior e intermediário para contraste de títulos, metadados e carrossel */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[3] h-[65%] bg-gradient-to-t from-[#051F20]/95 via-[#051F20]/50 to-transparent" />
 
 
       {/* Título + metadados (um par por slide, empilhados na mesma célula) */}
       <section className="absolute inset-x-0 bottom-[calc(50%+20px)] z-10 px-4 md:px-[18px]">
 
         <ProgressiveBlur className="inset-x-0 -top-24 bottom-[-20px] md:-top-32" />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 -top-24 bottom-[-20px] -z-10 bg-gradient-to-t from-[#051F20]/80 via-[#051F20]/40 to-transparent md:-top-32"
+        />
 
         <div className="flex flex-col gap-4 md:flex-row md:items-end">
           <div className="grid">
@@ -72,7 +79,7 @@ export default function HarborEchoes() {
               <h2
                 key={s.id}
                 data-title
-                className="col-start-1 row-start-1 font-display text-[56px] font-medium leading-[0.88] tracking-[-0.045em] text-[#DAF1DE] sm:text-[72px] lg:text-[84px]"
+                className="col-start-1 row-start-1 font-display text-[56px] font-medium leading-[0.88] tracking-[-0.045em] text-[#DAF1DE] drop-shadow-[0_2px_12px_rgba(5,31,32,0.85)] sm:text-[72px] lg:text-[84px]"
               >
                 {s.title.map((line) => (
                   <span key={line} data-title-line className="block">
@@ -88,13 +95,34 @@ export default function HarborEchoes() {
               <div
                 key={s.id}
                 data-meta
-                className="col-start-1 row-start-1 flex flex-wrap items-end justify-between gap-x-6 gap-y-1 text-[#8EB69B] md:flex-nowrap md:pl-[70px]"
+                className="col-start-1 row-start-1 flex flex-wrap items-center justify-between gap-2.5 text-[#DAF1DE] md:flex-nowrap md:justify-end md:gap-3 md:pl-[70px]"
               >
-                <span data-meta-item className="block font-medium text-[#DAF1DE]">{s.by}</span>
-                <div className="flex gap-6 md:gap-[90px]">
-                  <span data-meta-item className="block">{s.date}</span>
-                  <span data-meta-item className="block">{s.time}</span>
-                  <span data-meta-item className="block">{s.city}</span>
+                <span
+                  data-meta-item
+                  className="inline-flex items-center gap-1.5 rounded-full border border-[#8EB69B]/40 bg-[#051F20]/85 px-3 py-1.5 font-medium text-[#DAF1DE] shadow-md shadow-black/40 backdrop-blur-md drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#8EB69B]" />
+                  {s.by}
+                </span>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span
+                    data-meta-item
+                    className="inline-flex items-center rounded-full border border-[#8EB69B]/25 bg-[#051F20]/80 px-2.5 py-1.5 text-[#DAF1DE] shadow-sm shadow-black/30 backdrop-blur-md drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
+                  >
+                    {s.date}
+                  </span>
+                  <span
+                    data-meta-item
+                    className="inline-flex items-center rounded-full border border-[#8EB69B]/25 bg-[#051F20]/80 px-2.5 py-1.5 text-[#DAF1DE] shadow-sm shadow-black/30 backdrop-blur-md drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
+                  >
+                    {s.time}
+                  </span>
+                  <span
+                    data-meta-item
+                    className="inline-flex items-center rounded-full border border-[#8EB69B]/25 bg-[#051F20]/80 px-2.5 py-1.5 text-[#DAF1DE] shadow-sm shadow-black/30 backdrop-blur-md drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
+                  >
+                    {s.city}
+                  </span>
                 </div>
               </div>
             ))}
