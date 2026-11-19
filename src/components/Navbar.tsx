@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { BRAND, NAV_LINKS, SOCIALS } from "../data/site";
+import { navigate } from "../router";
 
 const pill =
   "flex items-center gap-1.5 rounded-full bg-[#051F20]/50 border border-[#8EB69B]/30 px-3 py-[7px] font-mono text-[11px] uppercase leading-none tracking-wide text-[#DAF1DE] backdrop-blur-md transition hover:bg-[#163832]/80 hover:border-[#8EB69B]/60";
@@ -66,12 +67,20 @@ export default function Navbar() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  const handleBack = () => {
+    if (window.location.pathname !== "/" && window.history.length <= 1) {
+      navigate("/");
+    } else {
+      window.history.back();
+    }
+  };
+
   return (
     <>
       <header className="js-header fixed inset-x-0 top-0 z-[60] flex items-center justify-between px-4 pt-[18px] text-[#DAF1DE] md:justify-center md:gap-[86px] xl:grid xl:grid-cols-[1fr_auto_1fr] xl:gap-0 xl:px-[18px]">
         {/* esquerda */}
         <div className="flex items-center gap-8 xl:justify-start">
-          <button type="button" className={pill} onClick={() => window.history.back()}>
+          <button type="button" className={pill} onClick={handleBack}>
             <span aria-hidden>↖</span> Voltar
           </button>
           <nav className="hidden items-center gap-7 xl:flex" aria-label="Primary">
